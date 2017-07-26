@@ -1,0 +1,255 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- 
+        File Name: terminal.html
+        Description: Static testing environment for the terminal functionalities
+        @author Analia Mok
+    -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Terminal Testing</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:300" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" charset="utf-8"></script>
+    <script src="assets/js/jquery.sticky.js"></script>
+    <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="assets/js/unixSite.js"></script>
+
+    <!-- Must be imported FIRST -->
+    <script src="assets/js/file.js"></script>
+    <script src="assets/js/terminal.js"></script>
+    <script src="assets/js/sessions.js"></script>
+
+    <script src="assets/js/java.js"></script>
+
+    <!-- Styles that should not interfere w/ any other pages -->
+    <style>
+        html, body {
+            overflow-x: hidden;
+        }
+
+        div#title_container {
+            display: none;
+            /*display: block;*/
+            width: 70%;
+            margin: 2% auto 0 auto;
+            padding-bottom: 0.5em;
+            border-bottom: 3px solid #2D2D2D;
+            line-height: 40px;
+        }
+
+        div#title_container h2.title {
+            display: inline-block;
+            margin-left: 1em;
+            line-height: 40px;
+            vertical-align: middle;
+        }
+
+        div#instructions,
+        div#todo_list {
+            width: 70%;
+            margin: 1% auto 5% auto;
+            font-family: 'Merriweather', serif;
+        }
+
+        div#instructions h3 {
+            margin: 2em 0 1em 0;
+        }
+
+        div#todo_list li {
+            margin: 0.5em 0;
+        }
+
+        div#instructions li > ul {
+            margin-left: 2em;
+        }
+
+        div#terminal_icon {
+            border: 0;
+            display: inline-block;
+            padding: 0.5em;
+            background-color: #f47e69;
+            border-radius: 3px;
+            line-height: 20px;
+            vertical-align: middle;
+        }
+
+        div#terminal_icon img {
+            width: 50px;
+            height: 50px;
+        }
+
+        div.terminal {
+            /* Making terminal bigger for better use */
+            height: 25rem;
+            width: 90%;
+        }
+
+        @media (min-width: 900px) {
+            /* Desktop styling */
+            div.terminal {
+                width: 70%;
+            }
+        }
+
+    </style>
+
+</head>
+<body>
+<div id="container">
+
+    <header>
+        <div class="empty-div"></div>
+        <div id="logo">
+            <a href="index.php">
+                <img src="assets/images/logo.png" alt="Logo" style="border: 2px solid #fcf8f2;">
+            </a>
+        </div>
+        <!--using "font awesome" library-->
+        <div class="social">
+            <a href="#" class="fa fa-facebook"></a>
+            <a href="#" class="fa fa-twitter"></a>
+            <a href="#" class="fa fa-google"></a>
+            <a href="#" class="fa fa-linkedin"></a>
+            <a href="#" class="fa fa-rss"></a>
+        </div>
+        <nav id="top_nav">
+            <ul class="top-nav-menu">
+                <li><a href="index.php">Home</a></li>
+                <li><a href="tutorials/tutorial.php">Tutorial</a></li>
+                <li><a style="text-decoration: underline;
+            color: white;" href="terminal.html">Terminal</a></li>
+                <li><a href="references/command_ref.php">Reference</a></li>
+                <li><a href="about/about.php">About</a></li>
+            </ul>
+            <span class="open-top-nav">MENU</span>
+        </nav>
+    </header>
+
+    <div id="title_container">
+        <!--<div id="terminal_icon">-->
+        <!--				<span class="lnr lnr-chevron-left"></span>-->
+        <!--<img src="assets/images/lnr-terminal.svg" alt="terminal icon" />
+    </div>-->
+
+        <h2 class="title">Terminal Testing Environment</h2>
+
+    </div>
+
+
+    <!-- Testing Terminal -->
+    <div class="terminal" id="termOne">
+        <!-- Test a line in the terminal -->
+        <!--        <p><span>$</span>    <span class="dir_name">directory1</span></p>-->
+        <p id="cmd_in_holder"><label for="cmd_in">$ </label><input type="text" id="cmd_in" spellcheck="false"
+                                                                   autofocus/></p>
+    </div>
+
+    <!-- Test terminal That Slides in from the right -->
+
+    <!--
+        Div that holds content and position fixes
+        all content
+    -->
+
+    <!-- NOTE: The styling below is placed to be out of the way
+        of the main testing terminal. Should not be used in actual
+        site.
+    -->
+    <!--<div id="term_holder" style="top: 60%">-->
+    <!-- Another Container for the button & terminal -->
+    <!--<div id="slide_in">-->
+    <!-- Button Used to Slide Terminal -->
+    <!--<div id="term_open_btn" onclick="slideLeft();">-->
+    <!--				<span class="lnr lnr-chevron-left"></span>-->
+    <!--<img src="assets/images/lnr-terminal.svg" alt="terminal icon"/>
+</div>-->
+    <!-- Actual terminal Instance -->
+    <!--<div class="terminal">
+        <p id="cmd_in_holder"><label for="cmd_in">$    </label><input type="text" id="cmd_in" spellcheck="false" autofocus/></p>
+    </div>
+</div>
+</div>-->
+
+    <!-- TODOs for the terminal left -->
+    <!-- Hiding - Only for my own records -->
+    <div id="todo_list" style="display:none;">
+
+        <h3>Features to Add/Bugs to Fix:</h3>
+        <ul>
+            <li>[Maybe] cat: Allowing for standard input to be echoed to stdout</li>
+            <li>
+                [Maybe]
+                cat: Allowing for stdin to be echoed to a file
+                Ex. $cat >destFile.txt
+            </li>
+            <li>Call reSortChildren in mv and cp</li>
+            <li>Add ability to parse on * in file paths -_-'</li>
+            <li>
+                Styling:
+                <ul style="margin-left: 3em;">
+                    <li>Change Arrow Icon?</li>
+                </ul>
+            </li>
+        </ul>
+        <p>**[Maybe] : may be implemented for the final website verison,
+            but may not be done for the first presentation
+        </p>
+    </div>
+
+    <!-- User Instructions and Listing of Unsupported Features -->
+    <div id="instructions">
+        <h3>How To Use</h3>
+        <p>
+            This terminal works just like your typical UNIX terminal.
+            If you click anywhere in the terminal, a cursor will appear on the next available line.
+            Just type a command and press <em>enter</em>. The correct output will be displayed on the
+            terminal. Have fun!
+        </p>
+
+        <h3>Commands &amp; Features Not Supported:</h3>
+        <ul>
+            <li>Any command that leads to the execution of another program such as
+                <ul>
+                    <li>Vim/Vi, Nano, Pico</li>
+                    <li>Package Managers</li>
+                    <li>man</li>
+                    <li>tar</li>
+                    <li>etc.</li>
+                </ul>
+            </li>
+            <li>ipconfig</li>
+            <li>ip</li>
+            <li>traceroute</li>
+            <li>less</li>
+            <li>df</li>
+            <li>Pathing with a wildcard is not supported</li>
+            <li>
+                Certain behaviors of cat are not supported:
+                <ul>
+                    <li>Zero argument cat is supposed to echo content back to standard out</li>
+                    <li>Zero argument cat piping into a separate file</li>
+                </ul>
+            </li>
+            <li>sl</li>
+        </ul>
+    </div>
+
+
+    <footer>
+        <p>
+            &copy; 2017 Team FeelsGoodMan
+            <a id="siteMap" href="siteMap.php">Site Map</a>
+        </p>
+    </footer>
+</div> <!-- container closing div -->
+
+
+</body>
+</html>
