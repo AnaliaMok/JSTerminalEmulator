@@ -26,8 +26,9 @@ If you open the html file in a browser, you will see the original styling of the
 
 # Commands & Features Not Supported:
 
-- Any command that leads to the execution of another program such as Vim/Vi, Nano, Pico
-- Package Managers
+- Any command that leads to the execution of another program such as:
+  - Vim/Vi, Nano, Pico
+  - Package Managers
   - man
   - tar
   - etc.
